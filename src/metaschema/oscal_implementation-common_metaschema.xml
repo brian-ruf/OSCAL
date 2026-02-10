@@ -268,9 +268,9 @@
             <formal-name>Protocol Title</formal-name>
                         <description>A human readable name for the protocol (e.g., Transport Layer Security).</description>
                   </define-field>
-                  <assembly ref="port-range" max-occurs="unbounded">
+                  <field ref="port-range" max-occurs="unbounded">
                         <group-as name="port-ranges" in-json="ARRAY"/>
-                  </assembly>
+                  </field>
             </model>
             <constraint>
                   <expect id="oscal-component-protocol-uuid" level="WARNING" target="." test="@uuid">
@@ -278,7 +278,7 @@
                   </expect>
             </constraint>
       </define-assembly>
-      <define-assembly name="port-range">
+      <define-field name="port-range">
             <formal-name>Port Range</formal-name>
             <description>Where applicable this is the transport layer protocol port range an IPv4-based or IPv6-based service uses.</description>
             <define-flag name="start" as-type="non-negative-integer">
@@ -341,7 +341,7 @@
                         </protocol>
                   </service>
             </example>
-      </define-assembly>
+      </define-field>
 
       <define-assembly name="implementation-status">
             <formal-name>Implementation Status</formal-name>
