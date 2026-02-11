@@ -140,6 +140,10 @@
                     <formal-name>Finding Universally Unique Identifier Reference</formal-name>
                     <description>A <a href="https://pages.nist.gov/OSCAL/concepts/identifier-use/#machine-oriented">machine-oriented</a> identifier reference to a finding defined in the list of findings.</description>
                 </define-flag>
+                <model>
+                  <!-- Without a model the flags do not get generated in JSON schemas -->
+                  <field ref="remarks" in-xml="WITH_WRAPPER" min-occurs="0" max-occurs="1"/>
+                </model>
             </define-assembly>
 
             <!-- TODO: add link; check in the other assessment models -->

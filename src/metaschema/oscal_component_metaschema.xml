@@ -87,6 +87,10 @@
         </ol>
       </remarks>
     </define-flag>
+    <model>
+      <!-- Without a model the flags do not get generated in JSON schemas -->
+      <field ref="remarks" in-xml="WITH_WRAPPER" min-occurs="0" max-occurs="1"/>
+    </model>
   </define-assembly>
 
   <define-assembly name="defined-component">

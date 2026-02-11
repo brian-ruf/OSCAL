@@ -463,11 +463,15 @@
         </remarks>
     </define-assembly>
    
-    <!-- NOTE: This assembly used in mapping and profile is NOT used in the assessment-common for select-control-by-id -->
+    <!-- NOTE: Similar assembly named matching is used in profile. -->
     <define-assembly name="match-control" >
         <formal-name>Match Controls by Pattern</formal-name>
         <description>Selecting a set of controls by matching their IDs with a wildcard pattern.</description>
         <flag ref="match-pattern" />
+        <model>
+            <!-- Without a model the flags do not get generated in JSON schemas -->
+            <field ref="remarks" in-xml="WITH_WRAPPER" min-occurs="0" max-occurs="1"/>
+        </model>
     </define-assembly>
 
     <define-assembly name="confidence-score" >
