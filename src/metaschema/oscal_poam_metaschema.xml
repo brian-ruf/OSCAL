@@ -155,17 +155,20 @@
                 <group-as name="related-observations" in-json="ARRAY"/>
             </assembly>
 
-            <!-- CHANGED: replaced "risk" with new "assciated-risk" -->
-            <define-assembly name="associated-risk" max-occurs="unbounded">
+            <!-- CHANGED: replaced "risk" with new "associated-risk" -->
+            <!-- define-assembly name="associated-risk" max-occurs="unbounded">
                 <formal-name>Associated Risk</formal-name>
                 <description>Relates the finding to a set of referenced risks that were used to determine the finding.</description>
                 <group-as name="related-risks" in-json="ARRAY"/>
                 <define-flag name="risk-uuid" as-type="uuid" required="yes">
                     <formal-name>Risk Universally Unique Identifier Reference</formal-name>
-                    <!-- Identifier Reference -->
+                    <!- - Identifier Reference - ->
                     <description>A <a href="https://pages.nist.gov/OSCAL/concepts/identifier-use/#machine-oriented">machine-oriented</a> identifier reference to a risk defined in the list of risks.</description>
                 </define-flag>
-            </define-assembly>
+            </define-assembly -->
+            <assembly ref="associated-risk" max-occurs="unbounded">
+                <group-as name="related-risks" in-json="ARRAY"/>
+            </assembly>
             <field ref="remarks" in-xml="WITH_WRAPPER" min-occurs="0" max-occurs="1"/>
         </model>
         <constraint>
